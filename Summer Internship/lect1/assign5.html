@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Application Form</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    font-family:Georgia, serif;
+}
+
+h1{
+    color:red;
+    font-style:italic;
+    text-decoration:underline;
+}
+
+.info{
+    color:gold;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.form-box{
+    background:black;
+    border:3px solid gold;
+    color:gold;
+    width:600px;
+    padding:20px;
+    margin-top:20px;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+    color:gold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"]{
+    width:95%;
+    padding:8px;
+    margin-top:5px;
+    background:#222;
+    color:gold;
+    border:2px solid gold;
+}
+
+.gender,
+.skills{
+    margin-top:8px;
+    color:gold;
+}
+button{
+    margin-top:20px;
+    background:red;
+    color:gold;
+    border:2px solid gold;
+    padding:10px 20px;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:gold;
+    color:red;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Job Application Form :-</h1>
+
+<p class="info">
+Fill in your details and submit your application.
+</p>
+
+<div class="form-box">
+
+<form>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter Full Name">
+
+<label>Email</label>
+<input type="email" placeholder="Enter Email">
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter Phone Number">
+
+<label>Gender</label>
+<div class="gender">
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female
+    <input type="radio" name="gender"> Other
+</div>
+
+<label>Skills</label>
+<div class="skills">
+    <input type="checkbox"> HTML
+    <input type="checkbox"> CSS
+    <input type="checkbox"> JavaScript
+    <input type="checkbox"> Python
+</div>
+
+<label>Resume Upload</label>
+<input type="file">
+
+<br>
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
