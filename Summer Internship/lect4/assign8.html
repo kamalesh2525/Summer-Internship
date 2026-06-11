@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderlust Travel Blog</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+
+.hero{
+    height:650px;
+    background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb")
+    center center/cover no-repeat;
+    position:relative;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 5%;
+}
+
+.logo{
+    color:white;
+}
+
+.logo h1{
+    font-family:'Pacifico',cursive;
+    font-size:42px;
+    font-weight:normal;
+}
+
+.logo p{
+    color:#f5c242;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-top:3px;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+.navbar a:hover,
+.navbar .active{
+    color:#f5c242;
+}
+
+.hero-content{
+    position:absolute;
+    left:50%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    width:90%;
+    color:white;
+}
+
+.hero-content h2{
+    font-family:'Pacifico',cursive;
+    font-size:78px;
+    font-weight:normal;
+    margin-bottom:25px;
+}
+
+.ribbon{
+    display:inline-block;
+    background:#f5c242;
+    color:#19323c;
+    font-weight:700;
+    font-size:26px;
+    padding:16px 45px;
+    margin-bottom:25px;
+    position:relative;
+}
+
+.ribbon:before,
+.ribbon:after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:0;
+    height:0;
+    border-top:30px solid transparent;
+    border-bottom:30px solid transparent;
+}
+
+.ribbon:before{
+    left:-20px;
+    border-right:20px solid #f5c242;
+}
+
+.ribbon:after{
+    right:-20px;
+    border-left:20px solid #f5c242;
+}
+
+.hero-content p{
+    max-width:760px;
+    margin:auto;
+    line-height:1.8;
+    font-size:24px;
+}
+
+/* =====================
+   MAIN LAYOUT
+===================== */
+
+.container{
+    width:92%;
+    max-width:1400px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:2.2fr 1fr;
+    gap:35px;
+}
+
+/* =====================
+   BLOG POSTS
+===================== */
+
+.post{
+    padding-bottom:30px;
+    margin-bottom:35px;
+    border-bottom:2px dotted #c7c7c7;
+}
+
+.post:last-child{
+    border-bottom:none;
+}
+
+.post h2{
+    text-align:center;
+    font-family:'Pacifico',cursive;
+    font-size:58px;
+    font-weight:normal;
+    margin-bottom:20px;
+}
+
+.green{
+    color:#1f6b53;
+}
+
+.orange{
+    color:#e66d18;
+}
+
+.blue{
+    color:#266db8;
+}
+
+.meta{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+    color:#444;
+    font-size:15px;
+}
+
+.post-content{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.post-content img{
+    width:420px;
+    height:250px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.post-text{
+    flex:1;
+}
+
+.post-text p{
+    line-height:1.9;
+    font-size:19px;
+    color:#444;
+}
+
+.read-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+}
+
+.green-btn{
+    background:#2f8f63;
+}
+
+.orange-btn{
+    background:#f57a17;
+}
+
+.blue-btn{
+    background:#2870c6;
+}
+
+/* =====================
+   SIDEBAR
+===================== */
+
+.sidebar-card{
+    background:#f7f3ea;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.sidebar-card h3{
+    text-align:center;
+    font-family:'Pacifico',cursive;
+    font-size:42px;
+    font-weight:normal;
+    margin-bottom:20px;
+}
+
+.about-title{
+    color:#1f6b53;
+}
+
+.dest-title{
+    color:#e66d18;
+}
+
+.tip-title{
+    color:#266db8;
+}
+
+.follow-title{
+    color:#7d3bb6;
+}
+
+.about-img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.sidebar-card p{
+    text-align:center;
+    line-height:1.8;
+    color:#444;
+}
+
+.sidebar-card ul{
+    list-style:none;
+}
+
+.sidebar-card li{
+    padding:8px 0;
+    color:#444;
+    font-size:18px;
+}
+
+.sidebar-card li::before{
+    content:"📍";
+    margin-right:10px;
+}
+
+.tips li::before{
+    content:"★";
+    color:#266db8;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social a{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    text-decoration:none;
+    color:white;
+    font-size:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.fb{
+    background:#1877f2;
+}
+
+.ig{
+    background:#e1306c;
+}
+
+.tw{
+    background:#1da1f2;
+}
+
+.yt{
+    background:#ff0000;
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+    background:#0f5a34;
+    color:white;
+    padding:30px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.footer-left span{
+    font-size:50px;
+}
+
+.footer-left h4{
+    font-family:'Pacifico',cursive;
+    font-size:42px;
+    font-weight:normal;
+}
+
+.footer-left p{
+    font-size:20px;
+}
+
+.footer-right{
+    font-size:18px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media(max-width:1000px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.post-content{
+    flex-direction:column;
+}
+
+.post-content img{
+    width:100%;
+    height:auto;
+}
+
+.hero-content h2{
+    font-size:50px;
+}
+
+.ribbon{
+    font-size:20px;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+.navbar ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+footer{
+    text-align:center;
+    justify-content:center;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <h1>Wanderlust ✈</h1>
+            <p>TRAVEL BLOG</p>
+        </div>
+
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="hero-content">
+
+        <h2>Explore. Dream. Discover.</h2>
+
+        <div class="ribbon">
+            Travel Stories, Tips & Guides
+        </div>
+
+        <p>
+            Welcome to my travel blog! Here I share my travel
+            experiences, hidden gems and useful tips to help
+            you explore the world.
+        </p>
+
+    </div>
+
+</header>
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <!-- BLOG POSTS -->
+
+    <main>
+
+        <article class="post">
+
+            <h2 class="green">A Trip to the Mountains</h2>
+
+            <div class="meta">
+                <span>📅 May 20, 2025</span>
+                <span>👤 By Travel Lover</span>
+                <span>🏷 Nature, Adventure</span>
+            </div>
+
+            <div class="post-content">
+
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b">
+
+                <div class="post-text">
+
+                    <p>
+                        Mountains have a magic of their own. The fresh air,
+                        the greenery and the peaceful surroundings make it
+                        the perfect escape from busy city life.
+                    </p>
+
+                    <a href="#" class="read-btn green-btn">Read More</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="post">
+
+            <h2 class="orange">Sunsets at the Beach</h2>
+
+            <div class="meta">
+                <span>📅 May 15, 2025</span>
+                <span>👤 By Travel Lover</span>
+                <span>🏷 Beach, Relaxation</span>
+            </div>
+
+            <div class="post-content">
+
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+
+                <div class="post-text">
+
+                    <p>
+                        There's nothing more beautiful than a sunset by the
+                        beach. The waves, the breeze and the colors in the
+                        sky create a moment you'll never forget.
+                    </p>
+
+                    <a href="#" class="read-btn orange-btn">Read More</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="post">
+
+            <h2 class="blue">Exploring the City</h2>
+
+            <div class="meta">
+                <span>📅 May 10, 2025</span>
+                <span>👤 By Travel Lover</span>
+                <span>🏷 City, Culture</span>
+            </div>
+
+            <div class="post-content">
+
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df">
+
+                <div class="post-text">
+
+                    <p>
+                        Cities are full of life, culture, food and endless
+                        things to discover. Every corner has a story waiting
+                        to be told.
+                    </p>
+
+                    <a href="#" class="read-btn blue-btn">Read More</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- SIDEBAR -->
+
+    <aside>
+
+        <div class="sidebar-card">
+
+            <h3 class="about-title">About Me</h3>
+
+            <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+            class="about-img">
+
+            <p>
+                Hi! I'm a travel enthusiast who loves to explore
+                new places and share stories from the road.
+            </p>
+
+        </div>
+
+        <div class="sidebar-card">
+
+            <h3 class="dest-title">Top Destinations</h3>
+
+            <ul>
+                <li>Manali, Himachal Pradesh</li>
+                <li>Goa, India</li>
+                <li>Leh-Ladakh, India</li>
+                <li>Paris, France</li>
+                <li>Bali, Indonesia</li>
+            </ul>
+
+        </div>
+
+        <div class="sidebar-card">
+
+            <h3 class="tip-title">Travel Tips</h3>
+
+            <ul class="tips">
+                <li>Plan your trip in advance</li>
+                <li>Pack light and smart</li>
+                <li>Respect local culture</li>
+                <li>Try local food</li>
+                <li>Capture memories</li>
+            </ul>
+
+        </div>
+
+        <div class="sidebar-card">
+
+            <h3 class="follow-title">Follow Me</h3>
+
+            <div class="social">
+                <a href="#" class="fb">f</a>
+                <a href="#" class="ig">◎</a>
+                <a href="#" class="tw">t</a>
+                <a href="#" class="yt">▶</a>
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+<footer>
+
+    <div class="footer-left">
+
+        <span>✈</span>
+
+        <div>
+            <h4>Let's Travel the World Together!</h4>
+            <p>New experiences are waiting for you.</p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+        © 2025 Wanderlust Travel Blog. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>

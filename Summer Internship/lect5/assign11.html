@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Navbar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+}
+
+/* Navbar */
+.navbar{
+    background:#131921;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+/* Logo */
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.logo span{
+    color:#ff9900;
+}
+
+/* Search Box */
+.search-container{
+    display:flex;
+    width:50%;
+}
+
+.search-container input{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+
+.search-btn{
+    background:#febd69;
+    border:none;
+    padding:0 20px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.search-btn:hover{
+    background:#f3a847;
+}
+
+/* Right Section */
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.btn{
+    background:#232f3e;
+    color:white;
+    border:1px solid white;
+    padding:10px 15px;
+    border-radius:4px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#37475a;
+}
+
+.cart{
+    font-size:18px;
+}
+
+</style>
+
+</head>
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        amazon<span>.in</span>
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search Amazon">
+        <button class="search-btn">🔍</button>
+    </div>
+
+    <div class="nav-right">
+        <button class="btn">Sign In</button>
+        <button class="btn cart">🛒 Cart</button>
+    </div>
+
+</nav>
+
+</body>
+</html>
